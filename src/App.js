@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import TestHi from "./TestHi.jsx";
+import OpeningText from "./OpeningText.jsx";
 import UserText from "./UserText.jsx";
+
 
 //load local storage
 let phone = localStorage.getItem('phoneData')? localStorage.getItem('phoneData').split('&#11088') : [];
@@ -14,7 +15,7 @@ let misc = localStorage.getItem('miscData')? localStorage.getItem('miscData').sp
 function App() {
   return (
     <div id ="APP">
-      <TestHi description = "I hope this app will be good"></TestHi>
+      <OpeningText description = "I hope this app will be good"></OpeningText>
       <div id = "USER-CONTENT">
         <div  id="PHONE" class="contentBox" >
         <UserText value={phone} display="Phone Numbers" id="PHONE-DATA" class="innerContent" name="phoneData"></UserText>

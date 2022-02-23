@@ -9,7 +9,8 @@ function TestBox(params){
    
     const [input, setInput] = useState('');
     const [dataRetrieve, setDataRetrieve] = useState(localStorage.getItem(params.name) || '');
-
+    let controlText = "Hide Controls";
+    let savedText = "Show less";
 
     const holdSubmit = (event) => {
         //prevent page reload
@@ -24,6 +25,7 @@ function TestBox(params){
         localStorage.setItem(params.name, dataString);
         //update the data string for local storage
         setDataRetrieve(dataString);
+        setInput("");
     }
 
     //needs work
@@ -65,7 +67,10 @@ function TestBox(params){
                 <button id="TEXT-SUBMIT">Create</button>
             </form>
             <p id="INPUT-AREA"> {input} </p>
-           
+            <div id="DISPLAY">
+                <button id="CONTROL-TOGGLE">{controlText}</button>
+                <button id = "USER-TOGGLE">{savedText}</button>
+            </div>
            <div id="CONTROLS">
                 <div id="SEARCH">
                     <label>Search: </label>
@@ -80,8 +85,8 @@ function TestBox(params){
                     <button id="CLEAR-STORAGE" onClick={eraseStorage}>CLEAR ALL!</button>
                 </div>
             </div>
-          
-                <ArraySort value={dataRetrieve}></ArraySort>
+            
+            <ArraySort value={dataRetrieve}></ArraySort>
             
         </div>
     );

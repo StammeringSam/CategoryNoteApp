@@ -185,6 +185,22 @@ label{
   white-space: pre-line;
 }
 
+#DISPLAY{
+  background-color: #f89b76;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-bottom: 15px;
+}
+
+#CONTROL-TOGGLE{
+  background-color: #fcf8e5;
+}
+
+#USER-TOGGLE{
+  background-color: #fcf8e5;
+}
+
 #CONTROLS{
   border-top: 3px dashed #f89b76;
   border-bottom: 3px dashed #f89b76;

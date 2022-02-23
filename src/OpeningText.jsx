@@ -3,7 +3,7 @@ import './App.css';
 let lastName = "Oeffling";
 let names = ["Sam", "Casey", "Noah"];
 
-function TestHi(params){
+function OpeningText(params){
 
     return (
         <div>
@@ -13,4 +13,4 @@ function TestHi(params){
     );
 }
 
-export default TestHi;
+export default OpeningText;
