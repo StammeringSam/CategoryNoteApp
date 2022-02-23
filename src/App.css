@@ -1,38 +1,221 @@
-.App {
+/*
+#fcf8e5
+#f44a3d
+#f8ecdb
+#d23133
+#f89b76
+*/
+
+*{
+  color: #d23133;
+  background-color: #fcf8e5;
+  font-family: sans-serif;
+}
+
+label{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#APP{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#USER-CONTENT{
+  background-color: #d23133;
+  margin: 5px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border: 3px solid black;
+  border-radius: 1%;
+  text-overflow: clip;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+
+#CATEGORY{
+  background-color: #f89b76;
+  width: 400px;
+}
+/*Data ids are from the label until the text */
+
+.contentBox{
+  border: 3px solid black;
+  border-radius: 1%;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#PHONE-DATA{
+  margin: 5px;
+  border: 3px dashed #f89b76;
+  width: 385px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  
+}
+
+#PHONE{
+  background-color: #f89b76;
+}
+
+#PASSWORD-DATA{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  margin: 5px;
+  width: 385px;
+  border: 3px dashed #f89b76;
+
+}
+
+#PASSWORD{
+  background-color: #f89b76;
+}
+
+#URL-DATA{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  margin: 5px;
+  width: 385px;
+  border: 3px dashed #f89b76;
+}
+
+#URL{
+  background-color: #f89b76;
+}
+
+
+#ADDRESS-DATA{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  margin: 5px;
+  width: 385px;
+  border: 3px dashed #f89b76;
+
+}
+
+#ADDRESS{
+  background-color: #f89b76;
+}
+
+
+#RECIPE-DATA{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  margin: 5px;
+  width: 385px;
+  border: 3px dashed #f89b76;
+
+}
+
+#RECIPE{
+  background-color: #f89b76;
+}
+
+#MISC-DATA{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  margin: 5px;
+  width: 385px;
+  border: 3px dashed #f89b76;
+
+}
+
+#MISC{
+  background-color: #f89b76;
+}
+
+#COUNTER{
+  color: #f89b76;
+  text-align: left;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: bold;
+  background-color: #d23133;
+  border-top: 3px dashed #f89b76;
+  border-bottom: 5px double #f89b76;
+}
+
+#SAVED-TEXT-BORDER{
+
+  background-color: #f44a3d;
+}
+
+#SAVED-TEXT{
+  color: #fcf8e5;
+  text-align: left;
+  padding-left: 10px;
+  background-color: #f44a3d;
+  font-style: italic;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 3px dashed #f89b76;
+  text-overflow: hidden;
+  word-wrap: break-word;
+  white-space: pre-line;
+}
+
+
+#TEXT-SUBMIT{
+  color: #f89b76;
+  background-color: #d23133;
+  margin: 5px;
+  margin-bottom: 10px;
+  padding: 5px;
+  font-size: larger;
+}
+
+#TEXT-AREA{
+  color: #fcf8e5;
+  background-color: #f44a3d;
+  border: 3px solid #d23133;
+  border-radius: 7%;
+  margin: 5px;
+  resize: none;
+}
+
+#INPUT-AREA{
+  color: #fcf8e5;
+  background-color: #f44a3d;
+  border-top: 3px dashed #f89b76;
+  border-bottom: 3px dashed #f89b76;
+  border-right: 6px solid #f89b76;
+  border-left: 6px solid #f89b76;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-overflow: clip;
+  word-wrap: break-word;
+  white-space: pre-line;
+}
+
+#CONTROLS{
+  border-top: 3px dashed #f89b76;
+  border-bottom: 3px dashed #f89b76;
+  border-right: 6px solid #f89b76;
+  border-left: 6px solid #f89b76;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#SEARCH{
+  color: #fcf8e5;
+  margin: 10px;
+}
+
+#SEARCH-BAR{
+  color: #fcf8e5;
+  background-color: #f44a3d;
+}
+
+#DELETE button{
+  color: #f89b76;
+  background-color: #d23133;
+  margin: 10px;
+}
+
+#DELETE-ENTRY{
+  color: #fcf8e5;
+  background-color: #f44a3d;
+}
+
+#CLEAR-STORAGE{
+  background-color: #d23133;
+  color: #f89b76;
 }
