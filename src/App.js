@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import OpeningText from "./OpeningText.jsx";
 import UserText from "./UserText.jsx";
@@ -47,9 +46,25 @@ export default App;
 //better format each entry
 
 //The four actions at the bottom of each section
-  //Clear local storage
+  
   //swap between showing 5 and all of the array elements
   //search for elements in the array with text
-  //delete elements in the array by its given number
 
 //CSS styling and add more categories
+//Better organize code
+  //give each function a different file
+
+
+
+//QUESTIONS
+
+
+//put each action in its own form
+//do not use id selectors, use FormData and get
+
+//Ask about map
+  //Mainly focus on filter, would like a demonstration
+  //Ask if you can map through a specific number of entires in the array instead of all
+
+//change id for css in forms to classes
+

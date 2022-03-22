@@ -162,7 +162,7 @@ label{
   font-size: larger;
 }
 
-#TEXT-AREA{
+.TEXT-AREA{
   color: #fcf8e5;
   background-color: #f44a3d;
   border: 3px solid #d23133;
@@ -215,7 +215,7 @@ label{
   margin: 10px;
 }
 
-#SEARCH-BAR{
+.SEARCH-BAR{
   color: #fcf8e5;
   background-color: #f44a3d;
 }
@@ -226,7 +226,7 @@ label{
   margin: 10px;
 }
 
-#DELETE-ENTRY{
+.DELETE-ENTRY{
   color: #fcf8e5;
   background-color: #f44a3d;
 }

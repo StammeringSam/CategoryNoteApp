@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ArraySort from "./ArraySort.jsx"
+import ArraySort from "./ArraySort.jsx";
 import './App.css';
 
 
@@ -8,9 +8,11 @@ function TestBox(params){
 
    
     const [input, setInput] = useState('');
-    const [dataRetrieve, setDataRetrieve] = useState(localStorage.getItem(params.name) || '');
-    let controlText = "Hide Controls";
-    let savedText = "Show less";
+    let [dataRetrieve, setDataRetrieve] = useState(localStorage.getItem(params.name) || '');
+
+    let [hide, setHide] = useState('none');
+    let [length, setLength] = useState('Show All');
+
 
     const holdSubmit = (event) => {
         //prevent page reload
@@ -28,27 +30,46 @@ function TestBox(params){
         setInput("");
     }
 
-    //needs work
     const eraseStorage = (event) => {
         localStorage.removeItem(params.name);
         window.location.reload();
     }
 
-    //needs work
-    let dataArray = dataRetrieve.split('&#11088');
-    const deleteEntry = (event) =>{
-        let entryDel = document.getElementById("DELETE-ENTRY").value;
-        if((entryDel > 0) & (entryDel <= dataArray.length)){
-            dataArray.splice(entryDel - 1, 1);
-            dataRetrieve = dataArray.join('&#11088');
-            console.log(entryDel);
-            console.log(dataRetrieve);
+    const hideShow = (event) => {
+        if (hide === 'block'){
+            setHide('none');
+        }
+        else{
+            setHide('block');
         }
     }
 
+    const changeLength = (event => {
+        if (length === 'Show Three'){
+            setLength('Show All');
+        }
+        else{
+            setLength('Show Three');
+        }
+    })
+
+    //let dataArray = dataRetrieve.split('&#11088');
+    const deleteEntry = (event) =>{
+        event.preventDefault();
+        let data = new FormData(event.target);
+        let entryDel = data.get('delete');
+        if((entryDel > 0) || (entryDel <= params.value.length)){
+            params.value.splice(entryDel - 1, 1);
+            let newDataString = params.value.join('&#11088');
+            localStorage.setItem(params.name, newDataString);
+            setDataRetrieve(newDataString);
+        }
+    }
+    /*
     console.log(dataArray.length);
     console.log(params.value);
     console.log(dataRetrieve);
+    */
 
     return (
         <div id="CATEGORY">
@@ -56,7 +77,7 @@ function TestBox(params){
                 <label id="TEXT-LABEL"></label>
                     {params.display}: {"\n"}
                     <textarea 
-                    id="TEXT-AREA"
+                    className="TEXT-AREA"
                     required 
                     value={input}
                     rows={10}
@@ -68,25 +89,29 @@ function TestBox(params){
             </form>
             <p id="INPUT-AREA"> {input} </p>
             <div id="DISPLAY">
-                <button id="CONTROL-TOGGLE">{controlText}</button>
-                <button id = "USER-TOGGLE">{savedText}</button>
+                <button id="CONTROL-TOGGLE" onClick={hideShow}>Toggle Controls</button>
+                <button id = "USER-TOGGLE" onClick={changeLength}>{length}</button>
             </div>
-           <div id="CONTROLS">
+           <div id="CONTROLS" style={{display:hide}}>
                 <div id="SEARCH">
-                    <label>Search: </label>
-                    <input type="search" id="SEARCH-BAR"></input>
+                    <label>Search: 
+                    <input type="search" className="SEARCH-BAR"></input>
+                    </label>
                 </div>
-                <div id="DELETE">
-                    <label>Delete: </label>
-                    <input id="DELETE-ENTRY" type="number" min="1" max={params.value.length}></input>
-                    <button onClick={deleteEntry}>Remove entry</button>
-                </div>
+                <form onSubmit={deleteEntry}>
+                    <div id="DELETE">
+                        <label>Delete:
+                        <input className="DELETE-ENTRY" name="delete" type="number" min="1" max={params.value.length}></input>
+                        </label>
+                        <button>Remove entry</button>
+                    </div>
+                </form>
                 <div id="CLEAR">
                     <button id="CLEAR-STORAGE" onClick={eraseStorage}>CLEAR ALL!</button>
                 </div>
             </div>
             
-            <ArraySort value={dataRetrieve}></ArraySort>
+            <ArraySort value={dataRetrieve} length={length}></ArraySort>
             
         </div>
     );
