@@ -1,26 +1,35 @@
 import { useState } from "react";
+import moment from "moment";
 import ArraySort from "./ArraySort.jsx";
+import ArrayFilter from "./ArrayFilter.jsx"
 import './App.css';
 
 
 
-function TestBox(params){
+function Category(params){
 
-   
+
     const [input, setInput] = useState('');
     let [dataRetrieve, setDataRetrieve] = useState(localStorage.getItem(params.name) || '');
 
     let [hide, setHide] = useState('none');
     let [length, setLength] = useState('Show All');
 
+    //add to dataRetrieve and then split array using different characters
+   
+
+
 
     const holdSubmit = (event) => {
         //prevent page reload
         event.preventDefault();
+        let day = moment().format('L');
+        console.log(day);
         //through current user text into a variable
-        const heldSubmit = input;
+        const heldSubmit = input + "\n\n\n" + day;
         //adds text to front of the array when button is pressed
         params.value.unshift(heldSubmit);
+        console.log(params.value);
         //turn array into string separated by ~
         const dataString = params.value.join('&#11088');
         //store string into local storage
@@ -76,6 +85,7 @@ function TestBox(params){
             <form id={params.id} onSubmit={holdSubmit}>
                 <label id="TEXT-LABEL"></label>
                     {params.display}: {"\n"}
+
                     <textarea 
                     className="TEXT-AREA"
                     required 
@@ -84,34 +94,61 @@ function TestBox(params){
                     cols={45}
                     onChange={(event) => setInput(event.target.value)}
                     ></textarea>
+                    
                 <div></div>
                 <button id="TEXT-SUBMIT">Create</button>
             </form>
             <p id="INPUT-AREA"> {input} </p>
             <div id="DISPLAY">
-                <button id="CONTROL-TOGGLE" onClick={hideShow}>Toggle Controls</button>
-                <button id = "USER-TOGGLE" onClick={changeLength}>{length}</button>
+
+                <button 
+                id="CONTROL-TOGGLE" 
+                onClick={hideShow}
+                >Toggle Controls</button>
+
+                <button 
+                id = "USER-TOGGLE" 
+                onClick={changeLength}
+                >{length}</button>
+
             </div>
            <div id="CONTROLS" style={{display:hide}}>
-                <div id="SEARCH">
-                    <label>Search: 
-                    <input type="search" className="SEARCH-BAR"></input>
-                    </label>
-                </div>
+
+                <ArrayFilter value={dataRetrieve}></ArrayFilter>
+
                 <form onSubmit={deleteEntry}>
                     <div id="DELETE">
                         <label>Delete:
-                        <input className="DELETE-ENTRY" name="delete" type="number" min="1" max={params.value.length}></input>
+
+                        <input 
+                        className="DELETE-ENTRY" 
+                        name="delete" 
+                        type="number" 
+                        min="1" 
+                        max={params.value.length}
+                        ></input>
+
                         </label>
                         <button>Remove entry</button>
                     </div>
                 </form>
+
                 <div id="CLEAR">
-                    <button id="CLEAR-STORAGE" onClick={eraseStorage}>CLEAR ALL!</button>
+
+                    <button 
+                    id="CLEAR-STORAGE" 
+                    onClick={eraseStorage}
+                    >CLEAR ALL!</button>
+
                 </div>
+                
             </div>
             
-            <ArraySort value={dataRetrieve} length={length}></ArraySort>
+            <ArraySort 
+            value={dataRetrieve} 
+            key={params.display}
+            length={length}
+            ></ArraySort>
             
         </div>
     );
@@ -119,4 +156,4 @@ function TestBox(params){
 
 
 
-export default TestBox;
+export default Category;

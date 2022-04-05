@@ -220,6 +220,21 @@ label{
   background-color: #f44a3d;
 }
 
+.SEARCH-NUM{
+  color: #fcf8e5;
+  background-color: #f89b76;
+}
+
+#SEARCH-ELEMENT{
+  background-color: #f89b76;
+  border: 8px double #f89b76;
+  border-radius: 50%;
+}
+#SEARCH-LIST{
+  border: 8px double #f44a3d;
+  background-color: #f89b76;
+}
+
 #DELETE button{
   color: #f89b76;
   background-color: #d23133;

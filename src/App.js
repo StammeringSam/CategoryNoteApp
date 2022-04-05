@@ -14,7 +14,7 @@ let misc = localStorage.getItem('miscData')? localStorage.getItem('miscData').sp
 function App() {
   return (
     <div id ="APP">
-      <OpeningText description = "I hope this app will be good"></OpeningText>
+      <OpeningText description = "This is a placeholder until you think of something better"></OpeningText>
       <div id = "USER-CONTENT">
         <div  id="PHONE" class="contentBox" >
         <UserText value={phone} display="Phone Numbers" id="PHONE-DATA" class="innerContent" name="phoneData"></UserText>
@@ -47,13 +47,29 @@ export default App;
 
 //The four actions at the bottom of each section
   
-  //swap between showing 5 and all of the array elements
+
   //search for elements in the array with text
+    //FILTERING
+      //move code to different file to organize better
+      //Figure out a place to put output
+      //Maybe replace saved text when search has input
+      //Or replace the area below text area where it shows text updating
+        //if this, see if having the toggle controls button impacting this works well
+      //Better style the output, looks basic and not all that great
+      //Limit the number of results to 5
+
+//Add date/time of post to each element in the array
+  //try adding data to the original array in the sort array file 
+    //may work better than creating a new array
+    //worry about styling later, focus on getting it to work
+
 
 //CSS styling and add more categories
 //Better organize code
   //give each function a different file
 
+
+//figure out something to do with with the placeholder text at the top
 
 
 //QUESTIONS
@@ -62,9 +78,4 @@ export default App;
 //put each action in its own form
 //do not use id selectors, use FormData and get
 
-//Ask about map
-  //Mainly focus on filter, would like a demonstration
-  //Ask if you can map through a specific number of entires in the array instead of all
-
 //change id for css in forms to classes
-

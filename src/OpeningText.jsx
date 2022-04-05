@@ -1,13 +1,16 @@
+//import { useState } from "react";
+import Moment from 'moment';
 import './App.css';
 
-let lastName = "Oeffling";
-let names = ["Sam", "Casey", "Noah"];
 
 function OpeningText(params){
 
+    
+    let date = Moment().format('LL');
     return (
         <div>
-            <h1>Hello {names[0] + " " + lastName}</h1>
+            <h1>{" " + date}</h1>
+
             <p>{params.description}</p>
         </div>
     );

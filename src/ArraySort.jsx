@@ -1,6 +1,6 @@
 import './App.css';
 
-function ForTest(params){
+function MapArray(params){
 
     let data = params.value;
     let dataPrint = null;
@@ -20,6 +20,8 @@ function ForTest(params){
             short[i] = dataArray[i] + "\n";
         }
     }
+
+    
     //let dataLoop = "";
     //const dataContainer = dataArray;
     //let dataLength = dataArray.length;
@@ -76,4 +78,4 @@ function ForTest(params){
 
     }
 
-export default ForTest;
+export default MapArray;
