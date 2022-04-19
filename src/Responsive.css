@@ -1,0 +1,132 @@
+
+@media screen and ( max-width: 890px){
+
+
+    #PHONE-LINK{border: 3px solid #d23133; background-color: #fcf8e5; border-radius: 5%; text-decoration: none;}
+    #URL-LINK{border: 3px solid #d23133; background-color: #fcf8e5; border-radius: 5%; text-decoration: none;} 
+    #PASSWORD-LINK{border: 3px solid #d23133; background-color: #fcf8e5; border-radius: 5%; text-decoration: none;}
+    #ADDRESS-LINK{border: 3px solid #d23133; background-color: #fcf8e5; border-radius: 5%; text-decoration: none;}
+    #RECIPE-LINK{border: 3px solid #d23133; background-color: #fcf8e5; border-radius: 5%; text-decoration: none;}
+    #MISC-LINK{border: 3px solid #d23133; background-color: #fcf8e5; border-radius: 5%; text-decoration: none;}
+    #INNER-LINK{display: flex; flex-direction: row; justify-content: space-between; text-decoration: none;}
+
+    #USER-CONTENT{flex-direction: column; align-items: center;}
+
+    #PHONE-DATA{font-size: xx-large;}
+    #URL-DATA{font-size: xx-large;}
+    #PASSWORD-DATA{font-size: xx-large;}
+    #ADDRESS-DATA{font-size: xx-large;}
+    #RECIPE-DATA{font-size: xx-large;}
+    #MISC-DATA{font-size: xx-large;}
+
+    #COUNTER{font-size: larger;}
+    #SAVED-TEXT{font-style: normal; font-size: x-large;}
+
+    #TEXT-SUBMIT{width: 350px; height: 60px}
+    #CONTROL-TOGGLE{font-size: larger; height: 40px;}
+    #USER-TOGGLE{font-size: larger; height: 40px;}
+    #CONTENT-TOGGLE{font-size: x-large; height: 50px;}
+
+    #CONTROLS{
+        font-size: larger;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+      
+
+      
+      .SEARCH-BAR{font-size: larger;width: 220px;}
+      .SEARCH-NUM{font-size: larger;margin-bottom: 30px;}
+      #SEARCH-ELEMENT{font-size: x-large;}
+
+      #DELETE button{font-size: larger;margin-bottom: 60px;}
+      .DELETE-ENTRY{font-size: larger; width:120px; height: 30px}
+      
+      #CLEAR-STORAGE{
+        height: 50px;
+        font-size: larger;
+        width: 200px;
+      }
+
+
+    #LINKS{
+        font-size: larger;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 3fr 2fr 1fr;
+        text-align: center;
+        align-items: center;
+    }
+
+    .contentBox{
+        border-radius: 0%;
+    }
+
+    #INPUT-AREA{display: block;}
+
+}
+
+
+
+@media screen and ( max-width: 450px){
+    label{
+        font-size: xx-large;
+    }
+    #INPUT-AREA{font-size: xx-large;}
+
+    #LINKS{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 5fr 5fr 5fr 2fr 1fr 1fr;
+        text-align: center;
+        align-items: center;
+    }
+    #INNER-LINK{width: 200px;}
+
+
+    #APP{
+        background-color: #FCF8E5;
+    }
+
+    #USER-CONTENT{
+        background-color: #FCF8E5;
+        border: none;
+        border-radius: 0%;
+        align-items: center;
+    }
+
+    #CATEGORY{
+        background-color: #f89b76;
+        width: 300px;
+    }
+      
+  
+
+    .TEXT-AREA{
+        width: 216px;
+    }
+
+    #COUNTER{font-size: x-large;}
+    #SAVED-TEXT{font-size: xx-large;}
+
+
+    #TEXT-SUBMIT{width: 250px; height: 80px; color: #FCF8E5}
+    #CONTROL-TOGGLE{font-size: x-large; height: 60px; width: 120px;}
+    #USER-TOGGLE{font-size: x-large; height: 60px; width: 120px;}
+    #CONTENT-TOGGLE{font-size: x-large; height: 70px; width: 280px;}
+
+    .SEARCH-NUM{width:210px}
+    
+    .DELETE-ENTRY{height: 50px}
+    #DELETE button{height: 60px;}
+  
+    #PHONE-DATA{width: 285px;}
+    #URL-DATA{width: 285px;}
+    #PASSWORD-DATA{width: 285px;}
+    #ADDRESS-DATA{width: 285px;}
+    #RECIPE-DATA{width: 285px;}
+    #MISC-DATA{width: 285px;}
+    
+
+
+}

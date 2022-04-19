@@ -1,4 +1,5 @@
 import './App.css';
+import './Responsive.css';
 
 function MapArray(params){
 

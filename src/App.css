@@ -12,17 +12,20 @@
   font-family: sans-serif;
 }
 
-label{
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
+#DATE{text-shadow: 2px 1px black; margin-top: 100px; margin-bottom: 100px;}
 
-#APP{
-  text-align: center;
-}
+label{font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;}
+
+#APP{text-align: center;}
+
+#LINKS{display: none;}
+
 
 #USER-CONTENT{
   background-color: #d23133;
   margin: 5px;
+  margin-top: 50px;
+  margin-bottom: 50px;
   display: flex;
   border: 3px solid black;
   border-radius: 1%;
@@ -32,6 +35,7 @@ label{
   flex-wrap: wrap;
   justify-content: space-evenly;
   padding: 5px;
+  align-items:flex-start;
 }
 
 
@@ -47,9 +51,11 @@ label{
   padding-bottom: 5px;
   margin-bottom: 20px;
   margin-top: 20px;
+  box-shadow: 12px 12px 3px 6px black;
 }
 
 #PHONE-DATA{
+  font-size: larger;
   margin: 5px;
   border: 3px dashed #f89b76;
   width: 385px;
@@ -57,11 +63,10 @@ label{
   
 }
 
-#PHONE{
-  background-color: #f89b76;
-}
+#PHONE{background-color: #f89b76;}
 
 #PASSWORD-DATA{
+  font-size: larger;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   margin: 5px;
   width: 385px;
@@ -69,23 +74,21 @@ label{
 
 }
 
-#PASSWORD{
-  background-color: #f89b76;
-}
+#PASSWORD{background-color: #f89b76;}
 
 #URL-DATA{
+  font-size: larger;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   margin: 5px;
   width: 385px;
   border: 3px dashed #f89b76;
 }
 
-#URL{
-  background-color: #f89b76;
-}
+#URL{background-color: #f89b76;}
 
 
 #ADDRESS-DATA{
+  font-size: larger;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   margin: 5px;
   width: 385px;
@@ -93,12 +96,11 @@ label{
 
 }
 
-#ADDRESS{
-  background-color: #f89b76;
-}
+#ADDRESS{background-color: #f89b76;}
 
 
 #RECIPE-DATA{
+  font-size: larger;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   margin: 5px;
   width: 385px;
@@ -106,11 +108,10 @@ label{
 
 }
 
-#RECIPE{
-  background-color: #f89b76;
-}
+#RECIPE{background-color: #f89b76;}
 
 #MISC-DATA{
+  font-size: larger;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   margin: 5px;
   width: 385px;
@@ -118,9 +119,7 @@ label{
 
 }
 
-#MISC{
-  background-color: #f89b76;
-}
+#MISC{background-color: #f89b76;}
 
 #COUNTER{
   color: #f89b76;
@@ -133,10 +132,7 @@ label{
   border-bottom: 5px double #f89b76;
 }
 
-#SAVED-TEXT-BORDER{
-
-  background-color: #f44a3d;
-}
+#SAVED-TEXT-BORDER{background-color: #f44a3d;}
 
 #SAVED-TEXT{
   color: #fcf8e5;
@@ -144,6 +140,7 @@ label{
   padding-left: 10px;
   background-color: #f44a3d;
   font-style: italic;
+  font-size: larger;
   padding-top: 20px;
   padding-bottom: 20px;
   border-bottom: 3px dashed #f89b76;
@@ -152,6 +149,7 @@ label{
   white-space: pre-line;
 }
 
+#ARRAY-SORT{background-color: #f89b76;}
 
 #TEXT-SUBMIT{
   color: #f89b76;
@@ -160,6 +158,8 @@ label{
   margin-bottom: 10px;
   padding: 5px;
   font-size: larger;
+  width: 200px;
+
 }
 
 .TEXT-AREA{
@@ -169,10 +169,13 @@ label{
   border-radius: 7%;
   margin: 5px;
   resize: none;
+
 }
 
 #INPUT-AREA{
+  display: none;
   color: #fcf8e5;
+  font-size: x-large;
   background-color: #f44a3d;
   border-top: 3px dashed #f89b76;
   border-bottom: 3px dashed #f89b76;
@@ -186,22 +189,38 @@ label{
 }
 
 #DISPLAY{
+  margin-top: 15px;
   background-color: #f89b76;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
   margin-bottom: 15px;
 }
 
 #CONTROL-TOGGLE{
+  font-size: medium;
+  width: 180px;
   background-color: #fcf8e5;
 }
 
 #USER-TOGGLE{
+  font-size: medium;
+  width: 180px;
   background-color: #fcf8e5;
 }
 
+#CONTENT-TOGGLE
+{
+  font-size: medium;
+  width: 380px;
+  height: 30px;
+  background-color: #fcf8e5;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 #CONTROLS{
+  font-size: large;
   border-top: 3px dashed #f89b76;
   border-bottom: 3px dashed #f89b76;
   border-right: 6px solid #f89b76;
@@ -216,11 +235,14 @@ label{
 }
 
 .SEARCH-BAR{
+  font-size: medium;
   color: #fcf8e5;
   background-color: #f44a3d;
 }
 
 .SEARCH-NUM{
+  text-align: right;
+  font-size: medium;
   color: #fcf8e5;
   background-color: #f89b76;
 }
@@ -236,17 +258,40 @@ label{
 }
 
 #DELETE button{
+  font-size: medium;
   color: #f89b76;
   background-color: #d23133;
   margin: 10px;
 }
 
 .DELETE-ENTRY{
+  font-size: medium;
   color: #fcf8e5;
   background-color: #f44a3d;
 }
 
 #CLEAR-STORAGE{
+  font-size: medium;
   background-color: #d23133;
   color: #f89b76;
+}
+
+#INNER-LINK{
+  display: none;
+  justify-content: space-between;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  width: 400px;
+  font-size: larger;
+  border: 3px solid #f89b76;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-decoration: none;
+}
+
+#SCROLL-LINK{
+  border: 3px dotted #d23133;
+  padding: 5px;
+  font-size: large;
+  text-decoration: none;
 }

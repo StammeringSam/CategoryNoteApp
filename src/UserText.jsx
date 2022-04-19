@@ -3,6 +3,7 @@ import moment from "moment";
 import ArraySort from "./ArraySort.jsx";
 import ArrayFilter from "./ArrayFilter.jsx"
 import './App.css';
+import './Responsive.css';
 
 
 
@@ -13,7 +14,8 @@ function Category(params){
     let [dataRetrieve, setDataRetrieve] = useState(localStorage.getItem(params.name) || '');
 
     let [hide, setHide] = useState('none');
-    let [length, setLength] = useState('Show All');
+    let [length, setLength] = useState('View All');
+    let [content, setContent] = useState('none');
 
     //add to dataRetrieve and then split array using different characters
    
@@ -54,13 +56,23 @@ function Category(params){
     }
 
     const changeLength = (event => {
-        if (length === 'Show Three'){
-            setLength('Show All');
+        if (length === 'View Top'){
+            setLength('View All');
         }
         else{
-            setLength('Show Three');
+            setLength('View Top');
         }
-    })
+    });
+
+
+    const contentDisplay = (event => {
+        if (content === 'block'){
+            setContent('none');
+        }
+        else{
+            setContent('block');
+        }
+    });
 
     //let dataArray = dataRetrieve.split('&#11088');
     const deleteEntry = (event) =>{
@@ -79,8 +91,10 @@ function Category(params){
     console.log(params.value);
     console.log(dataRetrieve);
     */
+   params.dump = "test";
 
     return (
+        
         <div id="CATEGORY">
             <form id={params.id} onSubmit={holdSubmit}>
                 <label id="TEXT-LABEL"></label>
@@ -104,7 +118,7 @@ function Category(params){
                 <button 
                 id="CONTROL-TOGGLE" 
                 onClick={hideShow}
-                >Toggle Controls</button>
+                >Controls</button>
 
                 <button 
                 id = "USER-TOGGLE" 
@@ -143,13 +157,16 @@ function Category(params){
                 </div>
                 
             </div>
+            <div id="ARRAY-SORT" style={{display:content}}>
+                <ArraySort 
+                value={dataRetrieve} 
+                key={params.display}
+                length={length}
+                ></ArraySort>
+            </div>
+            <button onClick={contentDisplay} id="CONTENT-TOGGLE">Toggle Content</button>
             
-            <ArraySort 
-            value={dataRetrieve} 
-            key={params.display}
-            length={length}
-            ></ArraySort>
-            
+           
         </div>
     );
 }
