@@ -14,7 +14,6 @@ function FilterArray(params){
 
     function updateFilter(event){
         setFilter(event.target.value);
-        console.log(filter);
     }
 
     const showFilter = (event) => {

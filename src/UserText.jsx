@@ -1,9 +1,10 @@
 import { useState } from "react";
 import moment from "moment";
 import ArraySort from "./ArraySort.jsx";
-import ArrayFilter from "./ArrayFilter.jsx"
+import ArrayFilter from "./ArrayFilter.jsx";
 import './App.css';
 import './Responsive.css';
+import {StoreDelete} from "./TextDelete.js";
 
 
 
@@ -18,15 +19,11 @@ function Category(params){
     let [content, setContent] = useState('none');
 
     //add to dataRetrieve and then split array using different characters
-   
-
-
 
     const holdSubmit = (event) => {
         //prevent page reload
         event.preventDefault();
         let day = moment().format('L');
-        console.log(day);
         //through current user text into a variable
         const heldSubmit = input + "\n\n\n" + day;
         //adds text to front of the array when button is pressed
@@ -74,27 +71,23 @@ function Category(params){
         }
     });
 
-    //let dataArray = dataRetrieve.split('&#11088');
     const deleteEntry = (event) =>{
         event.preventDefault();
         let data = new FormData(event.target);
         let entryDel = data.get('delete');
         if((entryDel > 0) || (entryDel <= params.value.length)){
+            let cut = params.value[entryDel - 1];
             params.value.splice(entryDel - 1, 1);
             let newDataString = params.value.join('&#11088');
             localStorage.setItem(params.name, newDataString);
             setDataRetrieve(newDataString);
+            console.log(cut);
+            StoreDelete(cut);
+            
         }
     }
-    /*
-    console.log(dataArray.length);
-    console.log(params.value);
-    console.log(dataRetrieve);
-    */
-   params.dump = "test";
 
     return (
-        
         <div id="CATEGORY">
             <form id={params.id} onSubmit={holdSubmit}>
                 <label id="TEXT-LABEL"></label>
@@ -165,8 +158,6 @@ function Category(params){
                 ></ArraySort>
             </div>
             <button onClick={contentDisplay} id="CONTENT-TOGGLE">Toggle Content</button>
-            
-           
         </div>
     );
 }

@@ -2,6 +2,8 @@ import './App.css';
 import './Responsive.css';
 import OpeningText from "./OpeningText.jsx";
 import UserText from "./UserText.jsx";
+import Trash from "./Trash.jsx";
+
 
 
 //load local storage
@@ -24,48 +26,51 @@ function App() {
       <br/>
       
       <div id = "USER-CONTENT">
-        <div  id="PHONE" class="contentBox" >
-          <UserText value={phone} display="Phone Numbers" id="PHONE-DATA" class="innerContent" name="phoneData" dump={null}></UserText>
+        <div  id="PHONE" className="contentBox" >
+          <UserText value={phone} display="Phone Numbers" id="PHONE-DATA" className="innerContent" name="phoneData"></UserText>
         </div>
         <div  id="INNER-LINK">
           <a href="#top" id="TOP-LINK">Top</a>
           <a href="#bottom" id="BOTTOM-LINK">Bottom</a>
         </div>
-        <div id="URL" class="contentBox" >
-          <UserText value={url} display="Website URLs" id="URL-DATA" class="innerContent" name="urlData"></UserText>
+        <div id="URL" className="contentBox" >
+          <UserText value={url} display="Website URLs" id="URL-DATA" className="innerContent" name="urlData"></UserText>
         </div>
         <div  id="INNER-LINK">
           <a href="#top" id="TOP-LINK">Top</a>
           <a href="#bottom" id="BOTTOM-LINK">Bottom</a>
         </div>
-        <div id="PASSWORD" class="contentBox" >
-          <UserText value={password} display="Passwords" id="PASSWORD-DATA" class="innerContent" name="passwordData"></UserText>
+        <div id="PASSWORD" className="contentBox" >
+          <UserText value={password} display="Passwords" id="PASSWORD-DATA" className="innerContent" name="passwordData"></UserText>
         </div>
         <div  id="INNER-LINK">
           <a href="#top" id="TOP-LINK">Top</a>
           <a href="#bottom" id="BOTTOM-LINK">Bottom</a>
         </div>
-        <div id="ADDRESS" class="contentBox" >
-          <UserText value={address} display="Addresses" id="ADDRESS-DATA" class="innerContent" name="addressData"></UserText>
+        <div id="ADDRESS" className="contentBox" >
+          <UserText value={address} display="Addresses" id="ADDRESS-DATA" className="innerContent" name="addressData"></UserText>
         </div>
         <div  id="INNER-LINK">
           <a href="#top" id="TOP-LINK">Top</a>
           <a href="#bottom" id="BOTTOM-LINK">Bottom</a>
         </div>
-        <div id="RECIPE" class="contentBox" >
-          <UserText value={recipe} display="Recipes" id="RECIPE-DATA" class="innerContent" name="recipeData"></UserText>
+        <div id="RECIPE" className="contentBox" >
+          <UserText value={recipe} display="Recipes" id="RECIPE-DATA" className="innerContent" name="recipeData"></UserText>
         </div>
         <div  id="INNER-LINK">
           <a href="#top" id="TOP-LINK">Top</a>
           <a href="#bottom" id="BOTTOM-LINK">Bottom</a>
         </div>
-        <div id="MISC" class="contentBox" >
-          <UserText value={misc} display="Miscellaneous" id="MISC-DATA" class="innerContent" name="miscData"></UserText>
+        <div id="MISC" className="contentBox" >
+          <UserText value={misc} display="Miscellaneous" id="MISC-DATA" className="innerContent" name="miscData"></UserText>
         </div>
         
         
 
       </div>
+      <br/>
+      <br/>
+      <Trash></Trash>
       <br/>
       <br/>
       <a href="#top" id="SCROLL-LINK">Top of page</a>
@@ -74,6 +79,11 @@ function App() {
       <br/>
       <br/>
       <p id='bottom'></p>
+
+
+
+
+
     </div>
   );
 }
@@ -95,4 +105,16 @@ trashcan
   Know how to give file information to alter...
   ...but not sure how to have information from file to alter
 
+  
+
+
+
+
+
+  import use state on App.js and switch pages like that
+  import the page
+  set up a function to have a condition to change pages
+  
 */
+
+
