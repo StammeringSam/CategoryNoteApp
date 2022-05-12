@@ -17,8 +17,7 @@ function Category(params){
     let [hide, setHide] = useState('none');
     let [length, setLength] = useState('View All');
     let [content, setContent] = useState('none');
-
-    //add to dataRetrieve and then split array using different characters
+    
 
     const holdSubmit = (event) => {
         //prevent page reload
@@ -28,7 +27,6 @@ function Category(params){
         const heldSubmit = input + "\n\n\n" + day;
         //adds text to front of the array when button is pressed
         params.value.unshift(heldSubmit);
-        console.log(params.value);
         //turn array into string separated by ~
         const dataString = params.value.join('&#11088');
         //store string into local storage
@@ -73,17 +71,35 @@ function Category(params){
 
     const deleteEntry = (event) =>{
         event.preventDefault();
+        
         let data = new FormData(event.target);
         let entryDel = data.get('delete');
         if((entryDel > 0) || (entryDel <= params.value.length)){
+            let deleteLast = false;
             let cut = params.value[entryDel - 1];
             params.value.splice(entryDel - 1, 1);
             let newDataString = params.value.join('&#11088');
             localStorage.setItem(params.name, newDataString);
-            setDataRetrieve(newDataString);
-            console.log(cut);
-            StoreDelete(cut);
+            let trashReturn = localStorage.getItem(params.garbage);
             
+            if (trashReturn == null){
+                deleteLast = true;
+                trashReturn = "this should not show on the webpage"
+            }
+
+            let trashArray = trashReturn.split('&#11088');
+            console.log(trashReturn);
+            trashArray.unshift(cut);
+
+            if (deleteLast === true){
+                deleteLast = false;
+                trashArray.splice(trashArray.length - 1, 1);
+            }
+;
+            trashReturn = trashArray.join('&#11088');
+            localStorage.setItem(params.garbage, trashReturn);
+            setDataRetrieve(newDataString);
+            StoreDelete(cut);
         }
     }
 

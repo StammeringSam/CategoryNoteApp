@@ -12,7 +12,7 @@
   font-family: sans-serif;
 }
 
-#DATE{text-shadow: 2px 1px black; margin-top: 100px; margin-bottom: 100px;}
+#DATE{text-shadow: 2px 1px black; margin-top: 100px; margin-bottom: 100px; text-align: center;}
 
 label{font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;}
 
@@ -294,4 +294,50 @@ label{font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;}
   padding: 5px;
   font-size: large;
   text-decoration: none;
+}
+
+#TRASH-BUTTONS
+{
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 50px;
+  background-color: #f89b76;
+}
+
+#EMPTY{
+  font-size: larger;
+  margin: 15px;
+}
+
+
+#RETURN{
+  font-size: xx-large;
+  width: 350px;
+  margin-bottom: 20px;
+  color: #f89b76;
+  background-color: #d23133;
+}
+
+#TRASH-AREA{
+  border-top: 5px solid #f89b76;
+  background-color: #f89b76;
+  border-bottom: 5px solid #f89b76;
+}
+
+#TRASH-TEXT{
+  color: #fcf8e5;
+  text-align: left;
+  padding-left: 10px;
+  background-color: #f44a3d;
+  font-style: italic;
+  font-size: larger;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 3px dashed #f89b76;
+  border-bottom: 3px dashed #f89b76;
+  text-overflow: hidden;
+  word-wrap: break-word;
+  white-space: pre-line;
 }

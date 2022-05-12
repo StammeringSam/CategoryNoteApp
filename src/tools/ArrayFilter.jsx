@@ -31,10 +31,6 @@ function FilterArray(params){
     }
 
 
-   
-
-    
-
     return(
         <div id="SEARCH">
                         
