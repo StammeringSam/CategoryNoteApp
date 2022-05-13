@@ -6,8 +6,10 @@ import './Responsive.css';
 
 function OpeningText(params){
 
-    
+    //displays current time
     let date = Moment().format('LL');
+
+    //links are drawn to allow user to jump to each category with less scrolling
     return (
         <div>
             <h1 id='DATE'>{" " + date}</h1>

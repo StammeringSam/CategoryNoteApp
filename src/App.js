@@ -18,9 +18,12 @@ let misc = localStorage.getItem('miscData')? localStorage.getItem('miscData').sp
 
 function App() {
 
+
+  //state to swap pages
   const [showPage, setPage] = useState(true);
   
 
+  //determine what the state is set too...
   function switchPage(){
     if (showPage === true){
       setPage(false);
@@ -30,7 +33,11 @@ function App() {
     }
   }
 
+  //...then determine what page shows based on the state
   if (showPage === false){
+    //page is currently Trash
+
+    //function to erase all data then refresh the page
     const emptyTrash = () => {
       localStorage.removeItem('trashData');
       localStorage.removeItem('phoneTrash');
@@ -42,13 +49,15 @@ function App() {
       window.location.reload();
     }
 
-
+    //restores items in trash to their categories
     const restoreTrash = () =>{
       SaveTrash();
+      //will erase all data in trash after restore
       emptyTrash();
     }
 
-
+    //create the trash page 
+      //which consists of the items stored in trashData as well as a few buttons for controls
     return(
       <div   id="TRASH-AREA">
         <div id="TRASH-BUTTONS">
@@ -65,7 +74,8 @@ function App() {
     );
   }
   else{
-
+    //if the page is not the trash page
+      //load the main page with all categories
     return (
       <div id ="APP">
         <p id='top'></p>
@@ -143,14 +153,3 @@ function App() {
 }
 
 export default App;
-
-
-/*
-
-separate the trash array to be able to restore the data
-    new storage created, add button to restore data and redistribute the data to their categories
-    remember to delete both the trashData and individual storages
-
-css style the page
-
-*/

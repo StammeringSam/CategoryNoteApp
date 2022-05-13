@@ -6,13 +6,18 @@ function MapArray(params){
     let data = params.value;
     let dataPrint = null;
 
+    //turn the supplied string into an array
     let dataArray = data.split('&#11088');
     
     let short = [];
     let dataLength = dataArray.length;
     const maxLength = 3;
+
+    //cap the length of the array by default
     if (dataArray.length > maxLength){ dataLength = maxLength;}
     
+    //replace undefined elements in an array with a paragraph
+        //else update the array with the data given to the file
     for (let i = 0; i < dataLength; i++ ){
         if (dataArray[i] === undefined){
             short[i] = "\n";
@@ -23,9 +28,13 @@ function MapArray(params){
     }
 
     let counter = 0;
+    //when specified by the user or by default, only display the first three elements
     if (params.length === 'View All'){dataArray = short;}
    
-    //after the loop, the data is returned to be printed to the web page
+
+    //display the index number above each element
+    //format each element with tabs as it is mapped through
+    //after mapping through dataArray, the data is returned to be printed to the web page
 
         dataPrint = dataArray
        

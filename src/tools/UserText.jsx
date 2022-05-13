@@ -36,11 +36,14 @@ function Category(params){
         setInput("");
     }
 
+    //erase all data in a category
+        //don't even send to trash
     const eraseStorage = (event) => {
         localStorage.removeItem(params.name);
         window.location.reload();
     }
 
+    //determine if controls are drawn
     const hideShow = (event) => {
         if (hide === 'block'){
             setHide('none');
@@ -50,6 +53,7 @@ function Category(params){
         }
     }
 
+    //determine how many saved entries are drawn
     const changeLength = (event => {
         if (length === 'View Top'){
             setLength('View All');
@@ -59,7 +63,7 @@ function Category(params){
         }
     });
 
-
+    //determine if saved content is drawn
     const contentDisplay = (event => {
         if (content === 'block'){
             setContent('none');
@@ -71,34 +75,41 @@ function Category(params){
 
     const deleteEntry = (event) =>{
         event.preventDefault();
-        
+        //grab the user inputted number 
         let data = new FormData(event.target);
         let entryDel = data.get('delete');
+        //check that the number is valid
         if((entryDel > 0) || (entryDel <= params.value.length)){
             let deleteLast = false;
+            //use the number to determine which index to delete
             let cut = params.value[entryDel - 1];
             params.value.splice(entryDel - 1, 1);
+            //update local storage
             let newDataString = params.value.join('&#11088');
             localStorage.setItem(params.name, newDataString);
+            //get trash data for category
             let trashReturn = localStorage.getItem(params.garbage);
             
+            //if trash is empty, give dummy data to split on
             if (trashReturn == null){
                 deleteLast = true;
                 trashReturn = "this should not show on the webpage"
             }
 
+            //add deleted element to trash then update local storage
             let trashArray = trashReturn.split('&#11088');
-            console.log(trashReturn);
             trashArray.unshift(cut);
 
+            //delete dummy data if there is any
             if (deleteLast === true){
                 deleteLast = false;
                 trashArray.splice(trashArray.length - 1, 1);
             }
-;
+
             trashReturn = trashArray.join('&#11088');
             localStorage.setItem(params.garbage, trashReturn);
             setDataRetrieve(newDataString);
+            //let file handle routing of trashData
             StoreDelete(cut);
         }
     }

@@ -9,9 +9,10 @@ function FilterArray(params){
     const [number, setNum] = useState('3');
     let [hide, setHide] = useState('none');
 
+    //create an array from the data sent to this file
     const dataArray = params.value.split('&#11088');
 
-
+    
     function updateFilter(event){
         setFilter(event.target.value);
     }
@@ -20,16 +21,19 @@ function FilterArray(params){
         setHide('block');
     }
 
+    //this function is split up into this block and the three above
+        //it will update the value searched for based on what the user inputs into the text box
+        //it will also draw the designated filter area when text has been input instead of hiding it.
     function callingFilter(event){
         updateFilter(event);
         showFilter(event);
     }
 
-    
+    //updates the stored number based on what the user inputs
+        //the number stored in the number state will determine how many filtered elements will draw
     function updateNum(event){
         setNum(event.target.value);
     }
-
 
     return(
         <div id="SEARCH">
